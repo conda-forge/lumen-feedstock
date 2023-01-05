@@ -1,5 +1,5 @@
 {% set name = "lumen" %}
-{% set version = "0.4.1" %}
+{% set version = "0.5.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5dcb6b53bf6ce3ad8d9c881dc5325917ada258efb971f257786ef1c050668424
+  sha256: 98afa4791cc858b311fde0b32cab0293d47f26f61ba0a48b255b29bdd6ea0576
 
 build:
   noarch: python
@@ -30,6 +30,10 @@ requirements:
     - hvplot
     - holoviews >=1.14
     - pandas
+    - packaging
+    - intake
+    - jinja2 >3.0
+    - pyyaml
 
 test:
   imports:
@@ -42,7 +46,7 @@ test:
 
 about:
   home: https://github.com/holoviz/lumen
-  summary: 'Illuminate your data. A monitoring solution built on Panel'
+  summary: Illuminate your data. A monitoring solution built on Panel
   description: |
     The Lumen project provides a framework for visual analytics, which allows users to
     build data-driven dashboards from a simple yaml specification. The power of
