@@ -30,6 +30,10 @@ requirements:
     - hvplot
     - holoviews >=1.14
     - pandas
+    - packaging
+    - intake
+    - jinja2 >3.0
+    - pyyaml
 
 test:
   imports:
