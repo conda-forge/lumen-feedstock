@@ -1,5 +1,5 @@
 {% set name = "lumen" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7cfb1e8e2a47667e424416529fb195cf704cd22ac5c0f9b09fbc54762df586af
+  sha256: 16e5196e66013f7fb03fbd892524a5247b98773a061f4da021aa3f6608fb703c
 
 build:
   noarch: python
