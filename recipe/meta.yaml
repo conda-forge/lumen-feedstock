@@ -1,5 +1,6 @@
 {% set name = "lumen" %}
 {% set version = "0.7.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -60,5 +61,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - Hoxbro
+    - hoxbro
     - philippjfr
