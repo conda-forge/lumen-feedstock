@@ -1,5 +1,6 @@
 {% set name = "lumen" %}
-{% set version = "0.6.3" %}
+{% set version = "0.7.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4bc77e95cd204bcf394c24243f270090272570644255fddb0b7ab2d3924604d6
+  sha256: 66dcccb043d8a17420b19d465731722ea65fc9fe8610d1e9fa0d3806408a27a4
 
 build:
   noarch: python
@@ -21,12 +22,11 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - param >=1.7.0
-    - pyct >=0.4.4
-    - setuptools >=30.3.0
+    - hatchling
+    - hatch-vcs
   run:
     - python >={{ python_min }}
-    - panel >=1.3.0
+    - panel >=1.5.0
     - hvplot
     - holoviews >=1.17
     - pandas
@@ -34,6 +34,7 @@ requirements:
     - intake <2
     - jinja2 >3.0
     - pyyaml
+    - param >=1.9.0
 
 test:
   imports:
@@ -60,5 +61,5 @@ about:
 
 extra:
   recipe-maintainers:
-    - Hoxbro
+    - hoxbro
     - philippjfr
