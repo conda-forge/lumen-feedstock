@@ -27,7 +27,7 @@ requirements:
     - setuptools >=30.3.0
   run:
     - python >={{ python_min }}
-    - panel >=1.3.0
+    - panel >=1.5.0
     - hvplot
     - holoviews >=1.17
     - pandas
@@ -35,6 +35,7 @@ requirements:
     - intake <2
     - jinja2 >3.0
     - pyyaml
+    - param >=1.9.0
 
 test:
   imports:
