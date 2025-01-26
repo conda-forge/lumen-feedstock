@@ -22,9 +22,8 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - param >=1.7.0
-    - pyct >=0.4.4
-    - setuptools >=30.3.0
+    - hatchling
+    - hatch-vcs
   run:
     - python >={{ python_min }}
     - panel >=1.5.0
