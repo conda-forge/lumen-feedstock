@@ -1,5 +1,5 @@
 {% set name = "lumen" %}
-{% set version = "0.7.0" %}
+{% set version = "0.8.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 66dcccb043d8a17420b19d465731722ea65fc9fe8610d1e9fa0d3806408a27a4
+  sha256: dd4d59ef441040a0b5d0432969ab5343a268b5c01a7da5c4e30ff0bfbaa451c2
 
 build:
   noarch: python
@@ -26,7 +26,7 @@ requirements:
     - hatch-vcs
   run:
     - python >={{ python_min }}
-    - panel >=1.5.0
+    - panel >=1.6.1
     - hvplot
     - holoviews >=1.17
     - pandas
@@ -48,12 +48,12 @@ test:
 
 about:
   home: https://github.com/holoviz/lumen
-  summary: Illuminate your data. A monitoring solution built on Panel
+  summary: Illuminate your data.
   description: |
-    The Lumen project provides a framework for visual analytics, which allows users to
-    build data-driven dashboards from a simple yaml specification. The power of
-    Lumen comes from the ability to leverage the powerful data intake, data processing
-    and data visualization libraries available in the PyData ecosystem.
+    Lumen is a fully open-source and extensible agent based framework
+    for chatting with data, text-to-SQL and for retrieval augmented
+    generation (RAG). It implements a declarative specfication for
+    expressing data pipelines, visualizations and dashboards.
   license: BSD-3-Clause
   license_file: LICENSE
   doc_url: https://lumen.holoviz.org/
