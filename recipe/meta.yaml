@@ -1,5 +1,5 @@
 {% set name = "lumen" %}
-{% set version = "0.8.0" %}
+{% set version = "0.9.0" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: dd4d59ef441040a0b5d0432969ab5343a268b5c01a7da5c4e30ff0bfbaa451c2
+  sha256: 575a9ef9444eda55a087c0201345d12ce1743f702538cf3170803a4c57d671e6
 
 build:
   noarch: python
@@ -25,10 +25,13 @@ requirements:
     - hatchling
     - hatch-vcs
   run:
+    - bokeh
+    - numpy
+    - sqlglot
     - python >={{ python_min }}
-    - panel >=1.6.1
+    - panel >=1.5.0
     - hvplot
-    - holoviews >=1.17
+    - holoviews >=1.17.0
     - pandas
     - packaging
     - intake <2
