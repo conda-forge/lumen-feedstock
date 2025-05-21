@@ -7,16 +7,16 @@ Home: https://github.com/holoviz/lumen
 
 Package license: BSD-3-Clause
 
-Summary: Illuminate your data. A monitoring solution built on Panel
+Summary: Illuminate your data.
 
 Development: https://github.com/holoviz/lumen
 
 Documentation: https://lumen.holoviz.org/
 
-The Lumen project provides a framework for visual analytics, which allows users to
-build data-driven dashboards from a simple yaml specification. The power of
-Lumen comes from the ability to leverage the powerful data intake, data processing
-and data visualization libraries available in the PyData ecosystem.
+Lumen is a fully open-source and extensible agent based framework
+for chatting with data, text-to-SQL and for retrieval augmented
+generation (RAG). It implements a declarative specfication for
+expressing data pipelines, visualizations and dashboards.
 
 
 Current build status
