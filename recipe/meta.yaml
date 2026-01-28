@@ -41,7 +41,7 @@ requirements:
     - param >=2.2.1
     - duckdb >=1.2.0
     - griffe
-    - instructor >=1.6.4
+    - instructor >=1.11.1
     - markitdown
     - nbformat
     - panel-graphic-walker >=0.6.4
