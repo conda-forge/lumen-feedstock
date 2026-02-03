@@ -10,11 +10,13 @@ source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: bfcd83ecf4b78887b027598a86ddd864e81df8da703f0ad2e8b8fabed15c82a3
 
+build:
+  number: 2
+
 outputs:
   - name: {{ name|lower }}
     build:
       noarch: python
-      number: 2
       entry_points:
         - lumen = lumen.command:main
       script:
@@ -90,7 +92,6 @@ outputs:
   - name: {{ name|lower }}-ai-local
     build:
       noarch: python
-      number: 0
     requirements:
       host:
         - python {{ python_min }}
@@ -113,7 +114,6 @@ outputs:
   - name: {{ name|lower }}-ai-openai
     build:
       noarch: python
-      number: 0
     requirements:
       host:
         - python {{ python_min }}
@@ -136,7 +136,6 @@ outputs:
   - name: {{ name|lower }}-ai-mistralai
     build:
       noarch: python
-      number: 0
     requirements:
       host:
         - python {{ python_min }}
@@ -159,7 +158,6 @@ outputs:
   - name: {{ name|lower }}-ai-anthropic
     build:
       noarch: python
-      number: 0
     requirements:
       host:
         - python {{ python_min }}
