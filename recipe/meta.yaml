@@ -90,6 +90,7 @@ outputs:
   - name: {{ name|lower }}-ai-local
     build:
       noarch: python
+      number: 0
     requirements:
       host:
         - python {{ python_min }}
@@ -100,6 +101,9 @@ outputs:
     test:
       imports:
         - lumen
+      requires:
+        - pip
+        - python {{ python_min }}
     about:
       home: https://github.com/holoviz/lumen
       summary: 'Lumen with huggingface_hub for local AI models'
@@ -109,6 +113,7 @@ outputs:
   - name: {{ name|lower }}-ai-openai
     build:
       noarch: python
+      number: 0
     requirements:
       host:
         - python {{ python_min }}
@@ -119,6 +124,9 @@ outputs:
     test:
       imports:
         - lumen
+      requires:
+        - pip
+        - python {{ python_min }}
     about:
       home: https://github.com/holoviz/lumen
       summary: 'Lumen with OpenAI support'
@@ -128,6 +136,7 @@ outputs:
   - name: {{ name|lower }}-ai-mistralai
     build:
       noarch: python
+      number: 0
     requirements:
       host:
         - python {{ python_min }}
@@ -138,6 +147,9 @@ outputs:
     test:
       imports:
         - lumen
+      requires:
+        - pip
+        - python {{ python_min }}
     about:
       home: https://github.com/holoviz/lumen
       summary: 'Lumen with MistralAI support'
@@ -147,6 +159,7 @@ outputs:
   - name: {{ name|lower }}-ai-anthropic
     build:
       noarch: python
+      number: 0
     requirements:
       host:
         - python {{ python_min }}
@@ -157,6 +170,9 @@ outputs:
     test:
       imports:
         - lumen
+      requires:
+        - pip
+        - python {{ python_min }}
     about:
       home: https://github.com/holoviz/lumen
       summary: 'Lumen with Anthropic support'
