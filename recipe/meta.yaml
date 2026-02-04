@@ -20,7 +20,7 @@ outputs:
       noarch: python
       entry_points:
         - lumen = lumen.command:main
-    script: build.sh
+    script: build_lumen.sh
 
     requirements:
       host:
