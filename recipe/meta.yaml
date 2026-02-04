@@ -12,6 +12,7 @@ source:
 
 build:
   number: 2
+  noarch: python
 
 outputs:
   - name: {{ name|lower }}
