@@ -133,27 +133,29 @@ outputs:
       license: BSD-3-Clause
       license_family: BSD
 
-  - name: {{ name|lower }}-ai-mistralai
-    build:
-      noarch: python
-    requirements:
-      host:
-        - python {{ python_min }}
-      run:
-        - python >={{ python_min }}
-        - {{ pin_subpackage('lumen', exact=True) }}
-        - mistralai
-    test:
-      imports:
-        - lumen
-      requires:
-        - pip
-        - python {{ python_min }}
-    about:
-      home: https://github.com/holoviz/lumen
-      summary: 'Lumen with MistralAI support'
-      license: BSD-3-Clause
-      license_family: BSD
+# At the time of attempting this output, instrustor had
+# too strict run_constrained pins including mistralai.
+  # - name: {{ name|lower }}-ai-mistralai
+  #   build:
+  #     noarch: python
+  #   requirements:
+  #     host:
+  #       - python {{ python_min }}
+  #     run:
+  #       - python >={{ python_min }}
+  #       - {{ pin_subpackage('lumen', exact=True) }}
+  #       - mistralai
+  #   test:
+  #     imports:
+  #       - lumen
+  #     requires:
+  #       - pip
+  #       - python {{ python_min }}
+  #   about:
+  #     home: https://github.com/holoviz/lumen
+  #     summary: 'Lumen with MistralAI support'
+  #     license: BSD-3-Clause
+  #     license_family: BSD
 
   - name: {{ name|lower }}-ai-anthropic
     build:
