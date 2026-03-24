@@ -1,5 +1,5 @@
 {% set name = "lumen" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,16 +8,15 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bfcd83ecf4b78887b027598a86ddd864e81df8da703f0ad2e8b8fabed15c82a3
+  sha256: 749e60a6e1137480e5cc8cedc5b4f7768183c0e076938a84ffbb83f1de018825
 
 build:
-  number: 2
+  number: 0
   noarch: python
 
 outputs:
   - name: {{ name|lower }}
     build:
-      noarch: python
       entry_points:
         - lumen = lumen.command:main
     script: build_lumen.sh
@@ -58,7 +57,7 @@ outputs:
         - sqlglotrs
         - tabulate
         - tiktoken
-    
+
     test:
       imports:
         - lumen
@@ -91,7 +90,6 @@ outputs:
 
   - name: {{ name|lower }}-ai-local
     build:
-      noarch: python
     requirements:
       host:
         - python {{ python_min }}
@@ -113,7 +111,6 @@ outputs:
 
   - name: {{ name|lower }}-ai-openai
     build:
-      noarch: python
     requirements:
       host:
         - python {{ python_min }}
@@ -159,7 +156,6 @@ outputs:
 
   - name: {{ name|lower }}-ai-anthropic
     build:
-      noarch: python
     requirements:
       host:
         - python {{ python_min }}
