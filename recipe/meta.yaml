@@ -1,5 +1,5 @@
 {% set name = "lumen" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bfcd83ecf4b78887b027598a86ddd864e81df8da703f0ad2e8b8fabed15c82a3
+  sha256: 749e60a6e1137480e5cc8cedc5b4f7768183c0e076938a84ffbb83f1de018825
 
 build:
-  number: 2
+  number: 0
   noarch: python
 
 outputs:
@@ -19,7 +19,9 @@ outputs:
     build:
       noarch: python
       entry_points:
-        - lumen = lumen.command:main
+        - lumen = lumen.command.ai:main
+        - lumen-ai = lumen.command.ai:main
+        - lumen-spec = lumen.command:main
     script: build_lumen.sh
 
     requirements:
@@ -30,35 +32,35 @@ outputs:
         - hatch-vcs
       run:
         - bokeh
-        - numpy
-        - sqlglot
         - chardet
-        - python >={{ python_min }}
-        - panel >=1.8.7
-        - hvplot
-        - holoviews >=1.17.0
-        - pandas
-        - packaging
-        - intake <2
-        - jinja2 >3.0
-        - pyyaml
-        - param >=2.2.1
         - duckdb >=1.2.0
         - griffe
-        - instructor >=1.11.1
+        - holoviews >=1.17.0
+        - hvplot
+        - instructor >=1.14.3
+        - intake <2
+        - jinja2 >3.0
         - markitdown
         - nbformat
+        - numpy
+        - packaging
+        - pandas
+        - panel >=1.7.5
         - panel-graphic-walker >=0.6.4
         - panel-material-ui >=0.8.1
-        - panel-splitjs
+        - panel-splitjs >=0.3.2
+        - param >=2.2.1
         - pyarrow
         - pydantic >=2.8.0
         - pydantic-extra-types
+        - python >={{ python_min }}
         - semchunk
+        - sqlglot
         - sqlglotrs
         - tabulate
         - tiktoken
-    
+        - vl-convert-python
+
     test:
       imports:
         - lumen
@@ -82,13 +84,6 @@ outputs:
       doc_url: https://lumen.holoviz.org/
       dev_url: https://github.com/holoviz/lumen
 
-# This recipe builds multiple outputs:
-# - lumen: The main package with core AI functionality
-# - lumen-ai-local: Metapackage that adds huggingface_hub for local AI models
-# - lumen-ai-openai: Metapackage that adds OpenAI support
-# - lumen-ai-mistralai: Metapackage that adds MistralAI support
-# - lumen-ai-anthropic: Metapackage that adds Anthropic support
-
   - name: {{ name|lower }}-ai-local
     build:
       noarch: python
@@ -99,6 +94,7 @@ outputs:
         - python >={{ python_min }}
         - {{ pin_subpackage('lumen', exact=True) }}
         - huggingface_hub
+        - hf-xet
     test:
       imports:
         - lumen
@@ -133,29 +129,49 @@ outputs:
       license: BSD-3-Clause
       license_family: BSD
 
-# At the time of attempting this output, instrustor had
-# too strict run_constrained pins including mistralai.
-  # - name: {{ name|lower }}-ai-mistralai
-  #   build:
-  #     noarch: python
-  #   requirements:
-  #     host:
-  #       - python {{ python_min }}
-  #     run:
-  #       - python >={{ python_min }}
-  #       - {{ pin_subpackage('lumen', exact=True) }}
-  #       - mistralai
-  #   test:
-  #     imports:
-  #       - lumen
-  #     requires:
-  #       - pip
-  #       - python {{ python_min }}
-  #   about:
-  #     home: https://github.com/holoviz/lumen
-  #     summary: 'Lumen with MistralAI support'
-  #     license: BSD-3-Clause
-  #     license_family: BSD
+  - name: {{ name|lower }}-ai-mistralai
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python {{ python_min }}
+      run:
+        - python >={{ python_min }}
+        - {{ pin_subpackage('lumen', exact=True) }}
+        - mistralai
+    test:
+      imports:
+        - lumen
+      requires:
+        - pip
+        - python {{ python_min }}
+    about:
+      home: https://github.com/holoviz/lumen
+      summary: 'Lumen with MistralAI support'
+      license: BSD-3-Clause
+      license_family: BSD
+
+  - name: {{ name|lower }}-ai-bedrock
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python {{ python_min }}
+      run:
+        - python >={{ python_min }}
+        - {{ pin_subpackage('lumen', exact=True) }}
+        - boto3 >=1.42.23
+    test:
+      imports:
+        - lumen
+      requires:
+        - pip
+        - python {{ python_min }}
+    about:
+      home: https://github.com/holoviz/lumen
+      summary: 'Lumen with AWS Bedrock support'
+      license: BSD-3-Clause
+      license_family: BSD
 
   - name: {{ name|lower }}-ai-anthropic
     build:
@@ -176,6 +192,118 @@ outputs:
     about:
       home: https://github.com/holoviz/lumen
       summary: 'Lumen with Anthropic support'
+      license: BSD-3-Clause
+      license_family: BSD
+
+  - name: {{ name|lower }}-ai-transformers
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python {{ python_min }}
+      run:
+        - python >={{ python_min }}
+        - {{ pin_subpackage('lumen-ai-local', exact=True) }}
+        - sentence-transformers >=2.7.0
+        - transformers >=4.51.0
+    test:
+      imports:
+        - lumen
+      requires:
+        - pip
+        - python {{ python_min }}
+    about:
+      home: https://github.com/holoviz/lumen
+      summary: 'Lumen with transformer-based embeddings support'
+      license: BSD-3-Clause
+      license_family: BSD
+
+  - name: {{ name|lower }}-ai-llama
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python {{ python_min }}
+      run:
+        - python >={{ python_min }}
+        - {{ pin_subpackage('lumen-ai-local', exact=True) }}
+        - llama-cpp-python >=0.3.15
+    test:
+      imports:
+        - lumen
+      requires:
+        - pip
+        - python {{ python_min }}
+    about:
+      home: https://github.com/holoviz/lumen
+      summary: 'Lumen with llama.cpp support for local models'
+      license: BSD-3-Clause
+      license_family: BSD
+
+  - name: {{ name|lower }}-ai-google
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python {{ python_min }}
+      run:
+        - python >={{ python_min }}
+        - {{ pin_subpackage('lumen', exact=True) }}
+        - google-genai >=1.56.0
+        - jsonref
+    test:
+      imports:
+        - lumen
+      requires:
+        - pip
+        - python {{ python_min }}
+    about:
+      home: https://github.com/holoviz/lumen
+      summary: 'Lumen with Google Gemini support'
+      license: BSD-3-Clause
+      license_family: BSD
+
+  - name: {{ name|lower }}-ai-litellm
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python {{ python_min }}
+      run:
+        - python >={{ python_min }}
+        - {{ pin_subpackage('lumen', exact=True) }}
+        - litellm
+    test:
+      imports:
+        - lumen
+      requires:
+        - pip
+        - python {{ python_min }}
+    about:
+      home: https://github.com/holoviz/lumen
+      summary: 'Lumen with LiteLLM support'
+      license: BSD-3-Clause
+      license_family: BSD
+
+  - name: {{ name|lower }}-ai-ollama
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python {{ python_min }}
+      run:
+        - python >={{ python_min }}
+        - {{ pin_subpackage('lumen', exact=True) }}
+        - ollama-python
+    test:
+      imports:
+        - lumen
+      requires:
+        - pip
+        - python {{ python_min }}
+    about:
+      home: https://github.com/holoviz/lumen
+      summary: 'Lumen with Ollama support'
       license: BSD-3-Clause
       license_family: BSD
 

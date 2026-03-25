@@ -3,6 +3,10 @@ About lumen-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lumen-feedstock/blob/main/LICENSE.txt)
 
+
+About lumen
+-----------
+
 Home: https://github.com/holoviz/lumen
 
 Package license: BSD-3-Clause
@@ -19,15 +23,75 @@ generation (RAG). It implements a declarative specfication for
 expressing data pipelines, visualizations and dashboards.
 
 
+About lumen-ai-anthropic
+------------------------
+
+Home: https://github.com/holoviz/lumen
+
+Package license: BSD-3-Clause
+
+Summary: Lumen with Anthropic support
+
+About lumen-ai-local
+--------------------
+
+Home: https://github.com/holoviz/lumen
+
+Package license: BSD-3-Clause
+
+Summary: Lumen with huggingface_hub for local AI models
+
+About lumen-ai-openai
+---------------------
+
+Home: https://github.com/holoviz/lumen
+
+Package license: BSD-3-Clause
+
+Summary: Lumen with OpenAI support
+
 Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table>
+    
+  <tr>
+    <td>Azure</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17386&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lumen-feedstock?branchName=main">
-      </a>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17386&branchName=main">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lumen-feedstock?branchName=main">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>linux_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17386&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lumen-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17386&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lumen-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17386&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lumen-feedstock?branchName=main&jobName=win&configuration=win%20win_64_" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
     </td>
   </tr>
 </table>
@@ -38,6 +102,9 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-lumen-green.svg)](https://anaconda.org/conda-forge/lumen) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lumen.svg)](https://anaconda.org/conda-forge/lumen) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lumen.svg)](https://anaconda.org/conda-forge/lumen) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lumen.svg)](https://anaconda.org/conda-forge/lumen) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-lumen--ai--anthropic-green.svg)](https://anaconda.org/conda-forge/lumen-ai-anthropic) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lumen-ai-anthropic.svg)](https://anaconda.org/conda-forge/lumen-ai-anthropic) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lumen-ai-anthropic.svg)](https://anaconda.org/conda-forge/lumen-ai-anthropic) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lumen-ai-anthropic.svg)](https://anaconda.org/conda-forge/lumen-ai-anthropic) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-lumen--ai--local-green.svg)](https://anaconda.org/conda-forge/lumen-ai-local) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lumen-ai-local.svg)](https://anaconda.org/conda-forge/lumen-ai-local) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lumen-ai-local.svg)](https://anaconda.org/conda-forge/lumen-ai-local) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lumen-ai-local.svg)](https://anaconda.org/conda-forge/lumen-ai-local) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-lumen--ai--openai-green.svg)](https://anaconda.org/conda-forge/lumen-ai-openai) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lumen-ai-openai.svg)](https://anaconda.org/conda-forge/lumen-ai-openai) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lumen-ai-openai.svg)](https://anaconda.org/conda-forge/lumen-ai-openai) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lumen-ai-openai.svg)](https://anaconda.org/conda-forge/lumen-ai-openai) |
 
 Installing lumen
 ================
@@ -49,16 +116,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `lumen` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `lumen, lumen-ai-anthropic, lumen-ai-local, lumen-ai-openai` can be installed with `conda`:
 
 ```
-conda install lumen
+conda install lumen lumen-ai-anthropic lumen-ai-local lumen-ai-openai
 ```
 
 or with `mamba`:
 
 ```
-mamba install lumen
+mamba install lumen lumen-ai-anthropic lumen-ai-local lumen-ai-openai
 ```
 
 It is possible to list all of the versions of `lumen` available on your platform with `conda`:
