@@ -1,5 +1,5 @@
 {% set name = "lumen" %}
-{% set version = "1.0.0" %}
+{% set version = "1.2.0" %}
 {% set python_min = "3.11" %}
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: bfcd83ecf4b78887b027598a86ddd864e81df8da703f0ad2e8b8fabed15c82a3
+  sha256: e0fabf72ce928d6311da8eb811c70a9dfe5ba47e10e7691c8c7b8b0b95e79c20
 
 build:
-  number: 2
+  number: 0
   noarch: python
 
 outputs:
@@ -58,7 +58,7 @@ outputs:
         - sqlglotrs
         - tabulate
         - tiktoken
-    
+
     test:
       imports:
         - lumen
