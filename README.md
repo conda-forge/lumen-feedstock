@@ -3,6 +3,10 @@ About lumen-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/lumen-feedstock/blob/main/LICENSE.txt)
 
+
+About lumen
+-----------
+
 Home: https://github.com/holoviz/lumen
 
 Package license: BSD-3-Clause
@@ -19,14 +23,105 @@ generation (RAG). It implements a declarative specfication for
 expressing data pipelines, visualizations and dashboards.
 
 
+About lumen-ai-anthropic
+------------------------
+
+Home: https://github.com/holoviz/lumen
+
+Package license: BSD-3-Clause
+
+Summary: Lumen with Anthropic support
+
+About lumen-ai-bedrock
+----------------------
+
+Home: https://github.com/holoviz/lumen
+
+Package license: BSD-3-Clause
+
+Summary: Lumen with AWS Bedrock support
+
+About lumen-ai-google
+---------------------
+
+Home: https://github.com/holoviz/lumen
+
+Package license: BSD-3-Clause
+
+Summary: Lumen with Google Gemini support
+
+About lumen-ai-litellm
+----------------------
+
+Home: https://github.com/holoviz/lumen
+
+Package license: BSD-3-Clause
+
+Summary: Lumen with LiteLLM support
+
+About lumen-ai-llama
+--------------------
+
+Home: https://github.com/holoviz/lumen
+
+Package license: BSD-3-Clause
+
+Summary: Lumen with llama.cpp support for local models
+
+About lumen-ai-local
+--------------------
+
+Home: https://github.com/holoviz/lumen
+
+Package license: BSD-3-Clause
+
+Summary: Lumen with huggingface_hub for local AI models
+
+About lumen-ai-mistralai
+------------------------
+
+Home: https://github.com/holoviz/lumen
+
+Package license: BSD-3-Clause
+
+Summary: Lumen with MistralAI support
+
+About lumen-ai-ollama
+---------------------
+
+Home: https://github.com/holoviz/lumen
+
+Package license: BSD-3-Clause
+
+Summary: Lumen with Ollama support
+
+About lumen-ai-openai
+---------------------
+
+Home: https://github.com/holoviz/lumen
+
+Package license: BSD-3-Clause
+
+Summary: Lumen with OpenAI support
+
+About lumen-ai-transformers
+---------------------------
+
+Home: https://github.com/holoviz/lumen
+
+Package license: BSD-3-Clause
+
+Summary: Lumen with transformer-based embeddings support
+
 Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=17386&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/lumen-feedstock?branchName=main">
+      <a href="https://github.com/conda-forge/lumen-feedstock/actions/workflows/conda-build.yml">
+        <img src="https://github.com/conda-forge/lumen-feedstock/actions/workflows/conda-build.yml/badge.svg?event=push&branch=main">
       </a>
     </td>
   </tr>
@@ -38,6 +133,16 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-lumen-green.svg)](https://anaconda.org/conda-forge/lumen) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lumen.svg)](https://anaconda.org/conda-forge/lumen) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lumen.svg)](https://anaconda.org/conda-forge/lumen) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lumen.svg)](https://anaconda.org/conda-forge/lumen) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-lumen--ai--anthropic-green.svg)](https://anaconda.org/conda-forge/lumen-ai-anthropic) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lumen-ai-anthropic.svg)](https://anaconda.org/conda-forge/lumen-ai-anthropic) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lumen-ai-anthropic.svg)](https://anaconda.org/conda-forge/lumen-ai-anthropic) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lumen-ai-anthropic.svg)](https://anaconda.org/conda-forge/lumen-ai-anthropic) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-lumen--ai--bedrock-green.svg)](https://anaconda.org/conda-forge/lumen-ai-bedrock) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lumen-ai-bedrock.svg)](https://anaconda.org/conda-forge/lumen-ai-bedrock) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lumen-ai-bedrock.svg)](https://anaconda.org/conda-forge/lumen-ai-bedrock) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lumen-ai-bedrock.svg)](https://anaconda.org/conda-forge/lumen-ai-bedrock) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-lumen--ai--google-green.svg)](https://anaconda.org/conda-forge/lumen-ai-google) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lumen-ai-google.svg)](https://anaconda.org/conda-forge/lumen-ai-google) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lumen-ai-google.svg)](https://anaconda.org/conda-forge/lumen-ai-google) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lumen-ai-google.svg)](https://anaconda.org/conda-forge/lumen-ai-google) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-lumen--ai--litellm-green.svg)](https://anaconda.org/conda-forge/lumen-ai-litellm) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lumen-ai-litellm.svg)](https://anaconda.org/conda-forge/lumen-ai-litellm) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lumen-ai-litellm.svg)](https://anaconda.org/conda-forge/lumen-ai-litellm) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lumen-ai-litellm.svg)](https://anaconda.org/conda-forge/lumen-ai-litellm) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-lumen--ai--llama-green.svg)](https://anaconda.org/conda-forge/lumen-ai-llama) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lumen-ai-llama.svg)](https://anaconda.org/conda-forge/lumen-ai-llama) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lumen-ai-llama.svg)](https://anaconda.org/conda-forge/lumen-ai-llama) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lumen-ai-llama.svg)](https://anaconda.org/conda-forge/lumen-ai-llama) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-lumen--ai--local-green.svg)](https://anaconda.org/conda-forge/lumen-ai-local) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lumen-ai-local.svg)](https://anaconda.org/conda-forge/lumen-ai-local) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lumen-ai-local.svg)](https://anaconda.org/conda-forge/lumen-ai-local) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lumen-ai-local.svg)](https://anaconda.org/conda-forge/lumen-ai-local) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-lumen--ai--mistralai-green.svg)](https://anaconda.org/conda-forge/lumen-ai-mistralai) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lumen-ai-mistralai.svg)](https://anaconda.org/conda-forge/lumen-ai-mistralai) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lumen-ai-mistralai.svg)](https://anaconda.org/conda-forge/lumen-ai-mistralai) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lumen-ai-mistralai.svg)](https://anaconda.org/conda-forge/lumen-ai-mistralai) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-lumen--ai--ollama-green.svg)](https://anaconda.org/conda-forge/lumen-ai-ollama) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lumen-ai-ollama.svg)](https://anaconda.org/conda-forge/lumen-ai-ollama) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lumen-ai-ollama.svg)](https://anaconda.org/conda-forge/lumen-ai-ollama) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lumen-ai-ollama.svg)](https://anaconda.org/conda-forge/lumen-ai-ollama) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-lumen--ai--openai-green.svg)](https://anaconda.org/conda-forge/lumen-ai-openai) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lumen-ai-openai.svg)](https://anaconda.org/conda-forge/lumen-ai-openai) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lumen-ai-openai.svg)](https://anaconda.org/conda-forge/lumen-ai-openai) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lumen-ai-openai.svg)](https://anaconda.org/conda-forge/lumen-ai-openai) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-lumen--ai--transformers-green.svg)](https://anaconda.org/conda-forge/lumen-ai-transformers) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/lumen-ai-transformers.svg)](https://anaconda.org/conda-forge/lumen-ai-transformers) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/lumen-ai-transformers.svg)](https://anaconda.org/conda-forge/lumen-ai-transformers) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/lumen-ai-transformers.svg)](https://anaconda.org/conda-forge/lumen-ai-transformers) |
 
 Installing lumen
 ================
@@ -49,16 +154,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `lumen` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `lumen, lumen-ai-anthropic, lumen-ai-bedrock, lumen-ai-google, lumen-ai-litellm, lumen-ai-llama, lumen-ai-local, lumen-ai-mistralai, lumen-ai-ollama, lumen-ai-openai, lumen-ai-transformers` can be installed with `conda`:
 
 ```
-conda install lumen
+conda install lumen lumen-ai-anthropic lumen-ai-bedrock lumen-ai-google lumen-ai-litellm lumen-ai-llama lumen-ai-local lumen-ai-mistralai lumen-ai-ollama lumen-ai-openai lumen-ai-transformers
 ```
 
 or with `mamba`:
 
 ```
-mamba install lumen
+mamba install lumen lumen-ai-anthropic lumen-ai-bedrock lumen-ai-google lumen-ai-litellm lumen-ai-llama lumen-ai-local lumen-ai-mistralai lumen-ai-ollama lumen-ai-openai lumen-ai-transformers
 ```
 
 It is possible to list all of the versions of `lumen` available on your platform with `conda`:
