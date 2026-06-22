@@ -253,7 +253,6 @@ outputs:
         - {{ pin_subpackage('lumen', exact=True) }}
         - google-genai >=1.56.0
         - jsonref
-        - opentelemetry-instrumentation-google-genai
     test:
       imports:
         - lumen
